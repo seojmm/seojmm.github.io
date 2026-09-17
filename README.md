@@ -1,3 +1,63 @@
-# seojmm.github.io
-seojmm.github.io
-dd
+# Jimyeung Seo · Personal portfolio
+
+Astro + TypeScript로 구성한 개인 포트폴리오. 영문 `/`, 국문 `/ko/` 페이지를 정적 HTML로 생성합니다.
+
+## 실행
+
+Node.js 22.12 이상이 필요하며, 배포에서는 Node.js 24를 사용합니다.
+
+```bash
+npm ci
+npm run dev
+```
+
+개발 서버 주소: http://localhost:4321
+
+```bash
+npm run build    # Astro/TypeScript 검사 + dist/ 생성
+npm run preview  # 빌드 결과 로컬 확인
+```
+
+## 콘텐츠 수정
+
+| 파일 | 내용 |
+| --- | --- |
+| `src/data/portfolio.ts` | 이름, 소속, 사진, 연락처, CV, 관심사, 논문, 프로젝트, 경력, 수상 |
+| `src/content/about.en.md` | 영문 소개 (Markdown) |
+| `src/content/about.ko.md` | 국문 소개 (Markdown) |
+| `src/data/translations.ts` | 메뉴, 제목, 빈 상태 문구 |
+| `templates/content.ts` | 복사해서 사용할 타입별 예시. 사이트에 표시되지 않음 |
+| `src/styles/global.css` | 색상, 글꼴, 여백, 반응형 및 인쇄 스타일 |
+
+`portfolio.ts`의 배열에 실제 항목을 추가하면 화면에 반영됩니다. 논문은 연도 내림차순, 같은 연도에서는 입력 순서대로 표시됩니다. 프로젝트와 경력은 입력 순서를 유지하므로 최신 항목을 먼저 배치하세요. 수상은 항목이 있을 때만 메뉴와 섹션이 표시됩니다.
+
+확인된 이름과 GitHub 주소, 이번 개인 웹사이트 프로젝트만 채워두었습니다. 논문·연구 주제·학력·경력을 임의로 만들지 않았습니다. 실제 내용을 넣기 전에는 해당 영역에 준비 중 문구가 표시됩니다.
+
+### 사진, CV, 연락처
+
+- 사진을 `public/images/profile.jpg`에 넣고 `profile.photo`를 `/images/profile.jpg`로 지정합니다. 사진이 없으면 이니셜 모노그램이 표시됩니다.
+- CV를 `public/files/cv.pdf`에 넣고 `profile.cv`를 `/files/cv.pdf`로 지정합니다.
+- `profile.email`, `profile.scholar`, `profile.affiliation`을 채우면 해당 항목이 나타납니다.
+- 국문 이름은 `profile.name.ko`에서 수정하세요. 현재는 기존 HTML의 영문 이름을 두 언어에 사용합니다.
+- 번역은 `{ en: 'English', ko: '한국어' }` 형식입니다. 논문 제목·저자·학회명은 원문을 유지합니다.
+- 링크는 실제 목적지가 있는 항목만 넣으세요.
+
+## 디자인
+
+따뜻한 종이색 `#f8f6f3`, 짙은 본문색 `#363231`, 저채도 빨간색 `#8b5155`가 기본입니다. `global.css` 상단의 CSS 변수를 바꾸면 전체에 적용됩니다. 외부 폰트 요청 없이 시스템 글꼴과 Georgia를 사용합니다.
+
+데스크톱에서는 고정 프로필 목차와 본문이 나란히 표시되고, 760px 이하에서는 목차와 본문을 세로로 배치합니다. 본문 건너뛰기, 키보드 포커스, 동작 줄이기 설정, 인쇄 스타일을 지원합니다. 소개와 언어 전환은 JavaScript 없이도 작동합니다.
+
+## GitHub Pages
+
+`astro.config.mjs`에 `https://seojmm.github.io`가 지정되어 있습니다. `.github/workflows/deploy.yml`은 `main` push 또는 수동 실행 시 검사·빌드 후 Pages에 배포합니다.
+
+1. GitHub 저장소의 **Settings → Pages → Source**를 **GitHub Actions**로 설정합니다.
+2. 검토한 소스와 `package-lock.json`을 커밋하고 `main`에 push합니다.
+3. Actions 실행 결과를 확인합니다.
+
+워크플로는 [Astro 공식 GitHub Pages 안내](https://docs.astro.build/en/guides/deploy/github/)를 따릅니다. 이번 로컬 템플릿 구성에서는 원격 저장소 설정 변경이나 배포를 수행하지 않았습니다.
+
+## 기존 작업 보존
+
+변경 전 `README.md`, `package.json`, `package-lock.json`, `postcss.config.js`는 `.local-backup/pre-astro/`에 보관했습니다. 기존 `build/`는 유지했습니다. 기존 작업에서 삭제되어 있던 루트 `index.html`, `global.css`는 복원하지 않았습니다. 새 사이트 소스는 `src/`, 빌드 결과는 `dist/`에 위치합니다. 백업과 빌드 산출물은 Git에서 제외합니다.

@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from './Section.astro';
+import LinkList from './LinkList.astro';
+import { profile, interests, publications, projects, experiences, awards, type Language } from '../data/portfolio';
+import { translations } from '../data/translations';
+import { Content as AboutEnglish } from '../content/about.en.md';
+import { Content as AboutKorean } from '../content/about.ko.md';
+interface Props { lang: Language }
+const { lang } = Astro.props;
+const t = translations[lang];
+const About = lang === 'en' ? AboutEnglish : AboutKorean;
+const navigation = [
+  { id: 'about', label: t.about },
+  { id: 'publications', label: t.publications },
+  { id: 'projects', label: t.projects },
+  { id: 'experience', label: t.experience },
+  ...(awards.length ? [{ id: 'awards', label: t.awards }] : []),
+];
+const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
+const contactLinks = [
+  ...(profile.email ? [{ label: t.email, href: `mailto:${profile.email}` }] : []),
+  { label: 'GitHub', href: profile.github },
+  ...(profile.scholar ? [{ label: 'Google Scholar', href: profile.scholar }] : []),
+  ...(profile.cv ? [{ label: t.cv, href: profile.cv }] : []),
+];
+---
+<BaseLayout lang={lang}>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href={lang === 'en' ? '/' : '/ko/'} aria-label={`${profile.name[lang]} — ${t.title}`}>
+        <span class="brand-mark" aria-hidden="true">s.</span><span>{profile.handle}</span>
+      </a>
+      <nav class="language-switch" aria-label={t.language}>
+        <a href="/" lang="en" hreflang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <span aria-hidden="true">/</span>
+        <a href="/ko/" lang="ko" hreflang="ko" aria-current={lang === 'ko' ? 'page' : undefined}>한국어</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="profile-symbol">
+        {profile.photo
+          ? <img src={profile.photo} alt={`${t.photo} ${profile.name[lang]}`} width="200" height="240" />
+          : <div class="monogram" aria-hidden="true"><span>{profile.initials}</span><span class="monogram-caption">{profile.handle}</span></div>}
+      </div>
+      <p class="sidebar-name">{profile.name[lang]}</p>
+      {profile.affiliation[lang] && <p class="affiliation">{profile.affiliation[lang]}</p>}
+      <p class="sidebar-label">{t.title}</p>
+      <nav class="section-nav" aria-label={t.navigation}>
+        {navigation.map((item, i) => <a href={`#${item.id}`}><span aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>{item.label}</a>)}
+      </nav>
+      <a class="sidebar-github" href={profile.github}>GitHub <span aria-hidden="true">↗</span></a>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="profile-title">
+        <p class="eyebrow hero-eyebrow">{t.title}</p>
+        <h1 id="profile-title">{profile.name[lang]}<span class="name-period">.</span></h1>
+        <p class="hero-description">{profile.tagline[lang]}</p>
+        <LinkList links={contactLinks} />
+      </section>
+
+      <Section id="about" number="01" title={t.about} eyebrow={t.introduction}>
+        <div class="prose"><About /></div>
+        <div class="research-block">
+          <h3>{t.research}</h3>
+          {interests.length
+            ? <ul class="tags" role="list">{interests.map(interest => <li>{interest[lang]}</li>)}</ul>
+            : <p class="muted">{t.interestsEmpty}</p>}
+        </div>
+      </Section>
+
+      <Section id="publications" number="02" title={t.publications}>
+        {years.length ? years.map(year => (
+          <div class="publication-year">
+            <h3 class="year">{year}</h3>
+            <ol class="publication-list" role="list">
+              {publications.filter(p => p.year === year).map(p => <li>
+                <article>
+                  <h4>{p.title}</h4>
+                  <p class="authors">{p.authors.map((author, i) => <>{i > 0 && ', '}{author === profile.name.en ? <strong>{author}</strong> : author}</>)}</p>
+                  <p class="venue">{p.venue}</p>
+                  {p.note && <p class="muted">{p.note[lang]}</p>}
+                  <LinkList links={p.links} />
+                </article>
+              </li>)}
+            </ol>
+          </div>
+        )) : <div class="empty-state"><span class="empty-mark" aria-hidden="true">—</span><div><p>{t.publicationsEmpty}</p><p class="muted">{t.publicationsDetail}</p></div></div>}
+      </Section>
+
+      <Section id="projects" number="03" title={t.projects} eyebrow={t.selected}>
+        <div class="project-list">
+          {projects.length ? projects.map((project, i) => <article class="project-card">
+            <div class="project-meta"><span>{t.projectNumber} {String(i + 1).padStart(2, '0')}</span><span>{project.period}</span></div>
+            <h3>{project.title[lang]}</h3>
+            <p>{project.description[lang]}</p>
+            {project.role && <p class="muted">{project.role[lang]}</p>}
+            <div class="project-bottom"><ul class="tags" role="list">{project.tags.map(tag => <li>{tag}</li>)}</ul><LinkList links={project.links} /></div>
+          </article>) : <p class="muted">{t.projectsEmpty}</p>}
+        </div>
+      </Section>
+
+      <Section id="experience" number="04" title={t.experience} eyebrow={t.background}>
+        {experiences.length ? <ol class="timeline" role="list">{experiences.map(item => <li>
+          <div class="timeline-meta"><span>{item.period[lang]}</span><span>{item.kind === 'education' ? t.education : t.work}</span></div>
+          <div><h3>{item.title[lang]}</h3><p>{item.organization[lang]}</p>{item.description && <p class="muted">{item.description[lang]}</p>}</div>
+        </li>)}</ol> : <div class="empty-state"><span class="empty-mark" aria-hidden="true">—</span><div><p>{t.experienceEmpty}</p><p class="muted">{t.experienceDetail}</p></div></div>}
+      </Section>
+
+      {awards.length > 0 && <Section id="awards" number="05" title={t.awards}>
+        <ol class="timeline" role="list">{awards.map(award => <li><span class="year">{award.year}</span><div><h3>{award.title[lang]}</h3><p>{award.organization[lang]}</p></div></li>)}</ol>
+      </Section>}
+
+      <footer class="site-footer"><p>© {new Date().getFullYear()} {profile.name[lang]}</p><a href="#top">{t.back} <span aria-hidden="true">↑</span></a></footer>
+    </main>
+  </div>
+  <script>
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.section-nav a'));
+    const sections = links.map(link => document.querySelector<HTMLElement>(link.hash)).filter((section): section is HTMLElement => !!section);
+    function updateNavigation() {
+      const atBottom = window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      const active = atBottom ? sections.at(-1) : [...sections].reverse().find(section => section.getBoundingClientRect().top <= 170) ?? sections[0];
+      links.forEach(link => {
+        if (link.hash === `#${active?.id}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+    let scheduled = false;
+    document.addEventListener('scroll', () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => { updateNavigation(); scheduled = false; });
+    }, { passive: true });
+    updateNavigation();
+    document.querySelectorAll<HTMLAnchorElement>('.language-switch a').forEach(link => {
+      link.addEventListener('click', () => { link.hash = window.location.hash; });
+    });
+  </script>
+</BaseLayout>

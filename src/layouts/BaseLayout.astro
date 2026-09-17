@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import { profile, type Language } from '../data/portfolio';
+import { translations } from '../data/translations';
+interface Props { lang: Language }
+const { lang } = Astro.props;
+const t = translations[lang];
+const title = `${profile.name[lang]} — ${t.title}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f6f3" />
+    <meta name="description" content={profile.tagline[lang]} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="ko" href={new URL('/ko/', Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={profile.tagline[lang]} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ko_KR'} />
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#main">{t.skip}</a>
+    <slot />
+  </body>
+</html>

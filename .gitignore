@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+build/
+.local-backup/
+.DS_Store
+.env
+.env.*
+!.env.example
