@@ -42,10 +42,11 @@ export interface SkillGroup {
 }
 
 // Source: the owner's CV, supplied on 2026-09-17.
-// Publication titles, author spellings, venues, and patent number follow that CV.
+// Publication titles, venues, and patent number follow that CV.
+// The owner corrected their English name to Jimyeung Seo on 2026-09-18.
 export const profile = {
   name: { en: 'Jimyeung Seo', ko: '서지명' },
-  authorNames: ['Jimyeung Seo', 'Jimyueng Seo'],
+  authorNames: ['Jimyeung Seo'],
   affiliation: {
     en: 'M.S. Student in Computer Science and Engineering, Konkuk University',
     ko: '건국대학교 컴퓨터공학 석사과정',
@@ -71,7 +72,7 @@ export const interests: Localized[] = [
 export const publications: Publication[] = [
   {
     title: 'Internalizing Negation-Gated Logical Rules into LLMs for Document-Level Relation Extraction',
-    authors: ['Hye-Yoon Baek', 'Sangjun Ji', 'Jimyueng Seo', 'Hae-Yoon Koo', 'Xiongnan Jin', 'Byungkook Oh'],
+    authors: ['Hye-Yoon Baek', 'Sangjun Ji', 'Jimyeung Seo', 'Hae-Yoon Koo', 'Xiongnan Jin', 'Byungkook Oh'],
     venue: 'Findings of the Association for Computational Linguistics: EMNLP',
     year: 2026,
     links: [],
@@ -112,7 +113,7 @@ export const patents: Patent[] = [
       en: 'Multimodal Data Distillation Method, and Triple-based News Refinement and Recommendation Method',
       ko: '멀티모달 데이터 증류 방법 및 트리플 기반 뉴스 정제·추천 방법',
     },
-    inventors: ['Jimyueng Seo', 'Byungkook Oh'],
+    inventors: ['Jimyeung Seo', 'Byungkook Oh'],
     number: '10-2025-016170',
     filed: '2025-10-31',
     links: [],
