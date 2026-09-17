@@ -1,6 +1,6 @@
-# 서지명 · Jimyeung Seo
+# 서지명, Jimyeung Seo
 
-HTML·CSS·JavaScript만으로 만든 개인 CV 웹사이트입니다. Node.js, npm 설치나 빌드 없이 사용할 수 있습니다.
+HTML, CSS, JavaScript만으로 만든 개인 CV 웹사이트입니다. Node.js, npm 설치나 빌드 없이 사용할 수 있습니다.
 
 - 한국어(기본): https://seojmm.github.io/
 - English: https://seojmm.github.io/en/
@@ -9,8 +9,8 @@ HTML·CSS·JavaScript만으로 만든 개인 CV 웹사이트입니다. Node.js, 
 ## 파일 구성
 
 ```text
-index.html               한국어 CV — 직접 수정하는 원본
-en/index.html           English CV — 직접 수정하는 원본
+index.html               한국어 CV: 직접 수정하는 원본
+en/index.html           English CV: 직접 수정하는 원본
 ko/index.html           기존 /ko/ 주소를 한국어 페이지로 연결
 style.css                색상, 글꼴, 여백, 모바일 및 인쇄 스타일
 script.js                언어 전환 시 스크롤 위치 유지, 연도 갱신
@@ -27,16 +27,16 @@ HTML 안의 주석과 아래 `id`를 검색하면 각 영역을 찾을 수 있�
 
 | 영역 | 검색할 id | 항목 추가 방법 |
 | --- | --- | --- |
-| 프로필·소개·연락처 | `about` | 이름, 소속, 소개 문단, 링크 수정 |
+| 프로필, 소개, 연락처 | `about` | 이름, 소속, 소개 문단, 링크 수정 |
 | 연구 관심사 | `research` | 목록의 `<li>` 복사 |
 | 학력 | `experience` | `timeline` 안의 `<li>` 복사 |
 | 논문 | `publications` | 해당 연도의 `publication-list` 안의 `<li>` 복사 |
 | 특허 출원 | `patents` | `patent-list` 안의 `<li>` 복사 |
 | 프로젝트 | `projects` | `<article class="project-entry">` 복사 |
-| 수상·장학 | `awards` | `timeline` 안의 `<li>` 복사 |
-| 기술·언어 | `skills` | `<dt>`와 `<dd>` 수정 |
+| 수상, 장학 | `awards` | `timeline` 안의 `<li>` 복사 |
+| 기술, 언어 | `skills` | `<dt>`와 `<dd>` 수정 |
 
-항목을 추가하거나 날짜를 바꾸면 한국어·영어 파일을 함께 수정하세요. 논문 제목과 저자명은 두 언어에서 동일하게 유지하며 본인 이름은 `<strong>Jimyeung Seo</strong>`로 강조합니다. 일반 문장에 `&`, `<`, `>`를 넣을 때는 각각 `&amp;`, `&lt;`, `&gt;`로 적으세요.
+항목을 추가하거나 날짜를 바꾸면 한국어, 영어 파일을 함께 수정하세요. 논문 제목과 저자명은 두 언어에서 동일하게 유지하며 본인 이름은 `<strong>Jimyeung Seo</strong>`로 강조합니다. 일반 문장에 `&`, `<`, `>`를 넣을 때는 각각 `&amp;`, `&lt;`, `&gt;`로 적으세요.
 
 사진을 넣으려면 `assets/`에 파일을 저장하고 프로필의 `profile-details`에 `has-photo` 클래스를 추가한 뒤 `<img class="profile-photo" ...>`를 넣습니다. 영문 페이지의 파일 경로는 `../assets/`로 시작합니다. PDF를 추가할 때도 `assets/`에 넣고 연락처 링크 목록에 연결하면 됩니다.
 
@@ -62,13 +62,13 @@ git commit -m "Update CV"
 git push origin main
 ```
 
-기존 화면이 남아 있으면 강력 새로고침(⌘⇧R / Ctrl+Shift+R)하거나 `?v=새버전`을 주소 뒤에 붙여 확인하세요. CSS·JS를 수정할 때 HTML의 `style.css?v=...`, `script.js?v=...` 버전 문자열도 두 언어에서 함께 갱신할 수 있습니다.
+기존 화면이 남아 있으면 강력 새로고침(⌘⇧R / Ctrl+Shift+R)하거나 `?v=새버전`을 주소 뒤에 붙여 확인하세요. CSS, JS를 수정할 때 HTML의 `style.css?v=...`, `script.js?v=...` 버전 문자열도 두 언어에서 함께 갱신할 수 있습니다.
 
 ## 콘텐츠 출처와 폰트
 
-제공받은 CV를 기준으로 학력 2건, 논문 5편, 특허 출원 1건, 프로젝트 4건, 수상·장학 5건과 기술·언어를 반영했습니다. 본인 영문 이름은 요청에 따라 **Jimyeung Seo**로 통일했습니다. 학위 과정·프로젝트의 ‘현재’ 표시는 CV 기준이므로 변화가 있으면 갱신하세요.
+제공받은 CV를 기준으로 학력 2건, 논문 5편, 특허 출원 1건, 프로젝트 4건, 수상, 장학 5건과 기술, 언어를 반영했습니다. 본인 영문 이름은 요청에 따라 **Jimyeung Seo**로 통일했습니다. 학위 과정, 프로젝트의 ‘현재’ 표시는 CV 기준이므로 변화가 있으면 갱신하세요.
 
-논문·특허·프로젝트 URL은 원문에 없어 추가하지 않았습니다. 국문 특허명·프로젝트명은 CV 영문 제목의 번역입니다. 원본 CV 파일과 개인 전화번호는 배포에 포함하지 않습니다.
+논문, 특허, 프로젝트 URL은 원문에 없어 추가하지 않았습니다. 국문 특허명, 프로젝트명은 CV 영문 제목의 번역입니다. 원본 CV 파일과 개인 전화번호는 배포에 포함하지 않습니다.
 
 [Pretendard Variable 1.3.9](https://github.com/orioncactus/pretendard/tree/v1.3.9)를 직접 제공합니다. 저작권 고지와 SIL Open Font License는 `assets/fonts/OFL-Pretendard.txt`에 있습니다.
 

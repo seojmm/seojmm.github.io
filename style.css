@@ -288,8 +288,8 @@ main:focus {
   font-size: 0.875rem;
 }
 .tags li + li::before {
-  content: "·";
-  margin-inline: 8px;
+  content: ",";
+  margin-inline: 0 8px;
 }
 .publication-year + .publication-year {
   margin-top: 24px;
