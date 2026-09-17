@@ -326,6 +326,9 @@ main:focus {
 .authors strong {
   font-weight: 600;
   color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 .venue {
   font-size: 0.9375rem;
