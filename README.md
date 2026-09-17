@@ -56,7 +56,11 @@ npm run preview  # 빌드 결과 로컬 확인
 2. 검토한 소스와 `package-lock.json`을 커밋하고 `main`에 push합니다.
 3. Actions 실행 결과를 확인합니다.
 
-워크플로는 [Astro 공식 GitHub Pages 안내](https://docs.astro.build/en/guides/deploy/github/)를 따릅니다. 이번 로컬 템플릿 구성에서는 원격 저장소 설정 변경이나 배포를 수행하지 않았습니다.
+워크플로는 [Astro 공식 GitHub Pages 안내](https://docs.astro.build/en/guides/deploy/github/)를 따릅니다.
+
+배포 순서: `main`에 소스 업로드 → GitHub Actions에서 의존성 설치 → 타입 검사 및 정적 HTML 생성 → 생성된 `dist/`를 Pages에 게시합니다. `dist/`를 직접 커밋할 필요는 없습니다. 실행 결과는 저장소의 Actions 탭에서 확인합니다.
+
+사이트: https://seojmm.github.io/ · 국문: https://seojmm.github.io/ko/
 
 ## 기존 작업 보존
 
