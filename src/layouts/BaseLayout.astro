@@ -6,7 +6,7 @@ interface Props { lang: Language }
 const { lang } = Astro.props;
 const t = translations[lang];
 const title = `${profile.name[lang]} — ${t.title}`;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(lang === 'ko' ? '/' : '/en/', Astro.site);
 ---
 <!doctype html>
 <html lang={lang}>
@@ -19,8 +19,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site)} />
-    <link rel="alternate" hreflang="ko" href={new URL('/ko/', Astro.site)} />
+    <link rel="alternate" hreflang="ko" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site)} />
     <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />

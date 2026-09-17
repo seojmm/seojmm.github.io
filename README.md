@@ -1,6 +1,6 @@
 # Jimyeung Seo · Personal portfolio
 
-Astro + TypeScript로 구성한 개인 포트폴리오. 영문 `/`, 국문 `/ko/` 페이지를 정적 HTML로 생성합니다.
+Astro + TypeScript로 구성한 개인 포트폴리오. 기본 국문 `/`, 영문 `/en/` 페이지를 정적 HTML로 생성합니다. 언어 선택은 `KO / EN` 순서이며, 기존 국문 주소 `/ko/`도 유지합니다.
 
 ## 실행
 
@@ -62,7 +62,7 @@ npm run preview  # 빌드 결과 로컬 확인
 
 배포 순서: `main`에 소스 업로드 → GitHub Actions에서 의존성 설치 → 타입 검사 및 정적 HTML 생성 → 생성된 `dist/`를 Pages에 게시합니다. `dist/`를 직접 커밋할 필요는 없습니다. 실행 결과는 저장소의 Actions 탭에서 확인합니다.
 
-사이트: https://seojmm.github.io/ · 국문: https://seojmm.github.io/ko/
+사이트(기본 한국어): https://seojmm.github.io/ · 영문: https://seojmm.github.io/en/
 
 ## 기존 작업 보존
 
