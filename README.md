@@ -35,7 +35,7 @@ npm run preview  # 빌드 결과 로컬 확인
 
 ### 사진, CV, 연락처
 
-- 사진을 `public/images/profile.jpg`에 넣고 `profile.photo`를 `/images/profile.jpg`로 지정합니다. 사진이 없으면 이니셜 모노그램이 표시됩니다.
+- 사진을 `public/images/profile.jpg`에 넣고 `profile.photo`를 `/images/profile.jpg`로 지정합니다. 사진은 상단 프로필에 표시되며, 없으면 텍스트만 표시됩니다.
 - CV를 `public/files/cv.pdf`에 넣고 `profile.cv`를 `/files/cv.pdf`로 지정합니다.
 - `profile.email`, `profile.scholar`, `profile.affiliation`을 채우면 해당 항목이 나타납니다.
 - 국문 이름은 `profile.name.ko`에서 수정하세요. 현재는 기존 HTML의 영문 이름을 두 언어에 사용합니다.
@@ -44,9 +44,11 @@ npm run preview  # 빌드 결과 로컬 확인
 
 ## 디자인
 
-따뜻한 종이색 `#f8f6f3`, 짙은 본문색 `#363231`, 저채도 빨간색 `#8b5155`가 기본입니다. `global.css` 상단의 CSS 변수를 바꾸면 전체에 적용됩니다. 외부 폰트 요청 없이 시스템 글꼴과 Georgia를 사용합니다.
+따뜻한 바탕색 `#f3f1ee`, 밝은 문서색 `#fdfcfb`, 짙은 본문색 `#363231`, 저채도 빨간색 `#8b5155`가 기본입니다. `global.css` 상단의 CSS 변수를 바꾸면 전체에 적용됩니다.
 
-데스크톱에서는 고정 프로필 목차와 본문이 나란히 표시되고, 760px 이하에서는 목차와 본문을 세로로 배치합니다. 본문 건너뛰기, 키보드 포커스, 동작 줄이기 설정, 인쇄 스타일을 지원합니다. 소개와 언어 전환은 JavaScript 없이도 작동합니다.
+폰트는 제목과 본문 모두 **Pretendard Variable 1.3.9**입니다. [Pretendard 공식 배포본](https://github.com/orioncactus/pretendard/tree/v1.3.9)을 `public/fonts/`에 포함하여 외부 CDN 없이 불러옵니다. SIL Open Font License와 저작권 고지는 `public/fonts/OFL-Pretendard.txt`에 있습니다.
+
+화면 가운데 한 열의 CV 문서가 표시되며 프로필·소개 → 연구 관심사 → 학력 및 경력 → 논문 → 프로젝트 → 수상 순서로 이어집니다. 제목과 얇은 구분선으로 영역을 나누고 프로젝트는 문서형 목록으로 표시합니다. 모바일에서는 문서 여백과 프로필 사진 배치를 조정합니다. 본문 건너뛰기, 키보드 포커스, 동작 줄이기 설정과 A4 인쇄 스타일을 지원합니다. 소개와 언어 전환은 JavaScript 없이도 작동합니다.
 
 ## GitHub Pages
 
