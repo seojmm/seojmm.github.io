@@ -176,8 +176,8 @@ main:focus {
 }
 .profile-photo {
   width: 140px;
-  height: 168px;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 .profile-description {
   color: var(--muted);
@@ -420,12 +420,12 @@ main:focus {
     font-size: 1.75rem;
   }
   .profile-details.has-photo {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr) 96px;
+    gap: 16px;
   }
   .profile-photo {
-    width: 110px;
-    height: 132px;
+    width: 96px;
+    height: auto;
   }
   .content-section {
     margin-top: 27px;
