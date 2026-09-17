@@ -262,6 +262,18 @@ main:focus {
 .project-entry > p {
   margin-top: 7px;
 }
+.project-role {
+  color: var(--accent);
+  font-size: 0.9375rem;
+}
+.project-contributions {
+  list-style: disc;
+  padding-left: 22px;
+  margin-top: 8px;
+}
+.project-contributions li + li {
+  margin-top: 6px;
+}
 .project-bottom {
   margin-top: 8px;
   display: flex;
