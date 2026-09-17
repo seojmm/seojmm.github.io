@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from './Section.astro';
 import LinkList from './LinkList.astro';
-import { profile, interests, publications, projects, experiences, awards, type Language } from '../data/portfolio';
+import { profile, interests, publications, patents, projects, experiences, awards, skills, type Language } from '../data/portfolio';
 import { translations } from '../data/translations';
 import { Content as AboutEnglish } from '../content/about.en.md';
 import { Content as AboutKorean } from '../content/about.ko.md';
@@ -14,6 +14,7 @@ const years = [...new Set(publications.map(p => p.year))].sort((a, b) => b - a);
 const contactLinks = [
   ...(profile.email ? [{ label: t.email, href: `mailto:${profile.email}` }] : []),
   { label: 'GitHub', href: profile.github },
+  ...(profile.linkedin ? [{ label: 'LinkedIn', href: profile.linkedin }] : []),
   ...(profile.scholar ? [{ label: 'Google Scholar', href: profile.scholar }] : []),
   ...(profile.cv ? [{ label: t.cv, href: profile.cv }] : []),
 ];
@@ -47,7 +48,7 @@ const contactLinks = [
           : <p class="muted">{t.interestsEmpty}</p>}
       </Section>
 
-      <Section id="experience" title={t.experience}>
+      <Section id="experience" title={experiences.length && experiences.every(item => item.kind === 'education') ? t.educationOnly : t.experience}>
         {experiences.length ? <ol class="timeline" role="list">{experiences.map(item => <li>
           <div class="timeline-meta"><span>{item.period[lang]}</span><span>{item.kind === 'education' ? t.education : t.work}</span></div>
           <div><h3>{item.title[lang]}</h3><p>{item.organization[lang]}</p>{item.description && <p class="muted">{item.description[lang]}</p>}</div>
@@ -62,7 +63,7 @@ const contactLinks = [
               {publications.filter(p => p.year === year).map(p => <li>
                 <article>
                   <h4>{p.title}</h4>
-                  <p class="authors">{p.authors.map((author, i) => <>{i > 0 && ', '}{author === profile.name.en ? <strong>{author}</strong> : author}</>)}</p>
+                  <p class="authors">{p.authors.map((author, i) => <>{i > 0 && ', '}{profile.authorNames.includes(author) ? <strong>{author}</strong> : author}</>)}</p>
                   <p class="venue">{p.venue}</p>
                   {p.note && <p class="muted">{p.note[lang]}</p>}
                   <LinkList links={p.links} />
@@ -73,10 +74,21 @@ const contactLinks = [
         )) : <p class="muted">{t.publicationsEmpty}</p>}
       </Section>
 
+      {patents.length > 0 && <Section id="patents" title={t.patents}>
+        <ol class="patent-list" role="list">{patents.map(patent => <li>
+          <article>
+            <h3>{patent.title[lang]}</h3>
+            <p class="authors">{patent.inventors.map((inventor, i) => <>{i > 0 && ', '}{profile.authorNames.includes(inventor) ? <strong>{inventor}</strong> : inventor}</>)}</p>
+            <p class="patent-meta">KR {patent.number} · {t.filed}: <time datetime={patent.filed}>{patent.filed}</time></p>
+            <LinkList links={patent.links} />
+          </article>
+        </li>)}</ol>
+      </Section>}
+
       <Section id="projects" title={t.projects}>
         <div class="project-list">
           {projects.length ? projects.map(project => <article class="project-entry">
-            <div class="entry-heading"><h3>{project.title[lang]}</h3><span class="entry-period">{project.period}</span></div>
+            <div class="entry-heading"><h3>{project.title[lang]}</h3><span class="entry-period">{project.period[lang]}</span></div>
             <p>{project.description[lang]}</p>
             {project.role && <p class="muted">{project.role[lang]}</p>}
             <div class="project-bottom"><ul class="tags" role="list">{project.tags.map(tag => <li>{tag}</li>)}</ul><LinkList links={project.links} /></div>
@@ -85,7 +97,11 @@ const contactLinks = [
       </Section>
 
       {awards.length > 0 && <Section id="awards" title={t.awards}>
-        <ol class="timeline" role="list">{awards.map(award => <li><span class="year">{award.year}</span><div><h3>{award.title[lang]}</h3><p>{award.organization[lang]}</p></div></li>)}</ol>
+        <ol class="timeline" role="list">{awards.map(award => <li><span class="year">{award.year}</span><div><h3>{award.title[lang]}</h3>{award.organization[lang] && <p>{award.organization[lang]}</p>}</div></li>)}</ol>
+      </Section>}
+
+      {skills.length > 0 && <Section id="skills" title={t.skills}>
+        <dl class="skill-list">{skills.map(group => <div><dt>{group.label[lang]}</dt><dd>{group.items.map(item => item[lang]).join(' · ')}</dd></div>)}</dl>
       </Section>}
 
       <footer class="site-footer"><p>© {new Date().getFullYear()} {profile.name[lang]}</p><a href="#top">{t.back} <span aria-hidden="true">↑</span></a></footer>

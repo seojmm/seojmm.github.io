@@ -1,3 +1,3 @@
-This is where I bring together the things I work on and the questions I explore.
+I am a master’s student in Computer Science and Engineering at Konkuk University, supervised by Professor Byungkook Oh. My research interests include graph neural networks, knowledge distillation, and recommender systems.
 
-A more detailed introduction is on its way. In the meantime, you can find my projects below or visit my GitHub.
+My projects span multi-turn question answering over manufacturing-domain knowledge graphs, graph-based threat tracking, recommender systems, and multimodal generative models.
