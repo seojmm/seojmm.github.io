@@ -33,68 +33,54 @@
     />
     <meta property="og:url" content="https://seojmm.github.io/" />
     <meta property="og:locale" content="ko_KR" />
-    <link rel="stylesheet" href="./style.css?v=profile-photo-20260918" />
+    <link rel="stylesheet" href="./style.css?v=research-layout-20261119" />
     <script src="./script.js?v=plain-20260918" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#main">본문으로 건너뛰기</a>
     <div class="page-shell">
+      <header id="about" class="profile-header" aria-labelledby="profile-title">
+        <img
+          class="profile-photo"
+          src="./assets/jimyeung-seo.jpg"
+          alt="서지명 프로필 사진"
+          width="632"
+          height="800"
+          decoding="async"
+        />
+        <h1 id="profile-title">서지명</h1>
+        <p class="affiliation">건국대학교 컴퓨터공학 석사과정</p>
+        <ul class="resource-links" role="list">
+          <li>
+            <a href="https://github.com/seojmm"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jimyeungseo"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+        <nav class="language-switch" aria-label="언어">
+          <a href="./index.html" lang="ko" hreflang="ko" aria-current="page"
+            >KO</a
+          ><span aria-hidden="true">/</span
+          ><a href="./en/index.html" lang="en" hreflang="en">EN</a>
+        </nav>
+      </header>
       <main id="main" class="cv-sheet" tabindex="-1">
-        <!-- 프로필 및 소개 -->
-        <header
-          id="about"
-          class="profile-header"
-          aria-labelledby="profile-title"
-        >
-          <div class="profile-topline">
-            <h1 id="profile-title">서지명</h1>
-            <nav class="language-switch" aria-label="언어">
-              <a href="./index.html" lang="ko" hreflang="ko" aria-current="page"
-                >KO</a
-              ><span aria-hidden="true">/</span
-              ><a href="./en/index.html" lang="en" hreflang="en">EN</a>
-            </nav>
-          </div>
-          <div class="profile-details has-photo">
-            <div>
-              <p class="affiliation">건국대학교 컴퓨터공학 석사과정</p>
-              <p class="profile-description">
-                그래프 신경망, 지식 증류, 추천 시스템
-              </p>
-              <ul class="resource-links" role="list">
-                <li>
-                  <a href="https://github.com/seojmm"
-                    >GitHub<span aria-hidden="true"> ↗</span></a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/jimyeungseo"
-                    >LinkedIn<span aria-hidden="true"> ↗</span></a
-                  >
-                </li>
-              </ul>
-            </div>
-            <img
-              class="profile-photo"
-              src="./assets/jimyeung-seo.jpg"
-              alt="서지명 프로필 사진"
-              width="632"
-              height="800"
-              decoding="async"
-            />
-          </div>
-          <div class="prose introduction">
-            <p>
-              건국대학교 컴퓨터공학 석사과정에서 오병국 교수님의 지도를 받고 있습니다.
-            </p>
-            <p>
-              추천 시스템과 지식 그래프 기반 질의응답을 연구합니다. 데이터의 관계를
-              그래프로 표현하고 사용자의 맥락을 반영해 필요한 정보를 더 잘 찾는
-              방법에 관심이 있습니다. 이미지에서 얻은 지식을 텍스트 기반 모델에
-              전달하는 지식 증류 방법도 연구하고 있습니다.
-            </p>
-          </div>
-        </header>
+        <div class="prose introduction">
+          <p>
+            건국대학교 컴퓨터공학 석사과정에서 오병국 교수님의 지도를 받고 있습니다.
+          </p>
+          <p>
+            추천 시스템과 지식 그래프 기반 질의응답을 연구합니다. 데이터의 관계를
+            그래프로 표현하고 사용자의 맥락을 반영해 필요한 정보를 더 잘 찾는
+            방법에 관심이 있습니다. 이미지에서 얻은 지식을 텍스트 기반 모델에
+            전달하는 지식 증류 방법도 연구하고 있습니다.
+          </p>
+        </div>
         <!-- 연구 관심사 -->
         <section
           id="research"
@@ -105,45 +91,27 @@
             <h2 id="research-title">연구 관심사</h2>
           </div>
           <div class="section-body">
-            <ul class="interest-list">
-              <li>그래프 신경망 (Graph Neural Networks)</li>
-              <li>지식 증류 (Knowledge Distillation)</li>
-              <li>추천 시스템 (Recommender Systems)</li>
-            </ul>
-          </div>
-        </section>
-        <!-- 학력 -->
-        <section
-          id="experience"
-          class="content-section"
-          aria-labelledby="experience-title"
-        >
-          <div class="section-heading"><h2 id="experience-title">학력</h2></div>
-          <div class="section-body">
-            <ol class="timeline" role="list">
-              <li>
-                <div class="timeline-meta">
-                  <span>2025.03 ~ 현재</span><span>학력</span>
-                </div>
-                <div>
-                  <h3>컴퓨터공학 석사과정</h3>
-                  <p>건국대학교, 서울</p>
-                  <p class="muted">지도교수: 오병국</p>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-meta">
-                  <span>2019.03 ~ 2025.02</span><span>학력</span>
-                </div>
-                <div>
-                  <h3>컴퓨터공학 학사</h3>
-                  <p>건국대학교, 서울</p>
-                  <p class="muted">
-                    전체 평점: 3.96 / 4.5, 전공 평점: 4.0 / 4.5
-                  </p>
-                </div>
-              </li>
-            </ol>
+            <details class="research-topic">
+              <summary>그래프 신경망 (Graph Neural Networks)</summary>
+              <ul>
+                <li><a href="#paper-graph-retrieval">다중 의도를 반영한 그래프 검색</a></li>
+                <li><a href="#project-graph-analysis">전파 그래프를 이용한 허위정보 탐지</a></li>
+              </ul>
+            </details>
+            <details class="research-topic">
+              <summary>지식 증류 (Knowledge Distillation)</summary>
+              <ul>
+                <li><a href="#paper-distillation">이미지 지식 증류를 통한 뉴스 추천</a></li>
+                <li><a href="#project-multimodal">멀티모달 생성 모델 연구</a></li>
+              </ul>
+            </details>
+            <details class="research-topic">
+              <summary>추천 시스템 (Recommender Systems)</summary>
+              <ul>
+                <li><a href="#paper-recommendation">추천을 위한 의미 그래프 정제</a></li>
+                <li><a href="#project-recommendation">추천 시스템 모델 설계 컨설팅</a></li>
+              </ul>
+            </details>
           </div>
         </section>
         <!-- 논문: 연도별 목록 -->
@@ -176,7 +144,7 @@
                   </article>
                 </li>
                 <li>
-                  <article>
+                  <article id="paper-graph-retrieval">
                     <h4>
                       Diversifying Differentiable Graph Retrieval with
                       Topic-Adaptive Multi-Intent Learning
@@ -189,7 +157,7 @@
                   </article>
                 </li>
                 <li>
-                  <article>
+                  <article id="paper-distillation">
                     <h4>
                       Image-Guided Debiasing Distillation with Preference
                       Alignment Across Multi-News Histories
@@ -210,7 +178,7 @@
               <h3 class="year">2025</h3>
               <ol class="publication-list" role="list">
                 <li>
-                  <article>
+                  <article id="paper-recommendation">
                     <h4>
                       Interaction-Grounded Semantic Graph Refinement for
                       LLM-based Recommendation
@@ -281,7 +249,7 @@
           </div>
           <div class="section-body">
             <div class="project-list">
-              <article class="project-entry">
+              <article class="project-entry" id="project-manufacturing">
                 <div class="entry-heading">
                   <h3>
                     제조 도메인 지식 그래프 기반 멀티턴 질의응답 기술 개발
@@ -310,7 +278,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-graph-analysis">
                 <div class="entry-heading">
                   <h3>그래프 기반 위협 추적 분석</h3>
                   <span class="entry-period">2025.10 ~ 현재</span>
@@ -333,7 +301,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-recommendation">
                 <div class="entry-heading">
                   <h3>추천 시스템 모델 설계 컨설팅 및 사례 연구</h3>
                   <span class="entry-period">2025.09 ~ 현재</span>
@@ -360,7 +328,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-multimodal">
                 <div class="entry-heading">
                   <h3>
                     멀티모달 생성 모델의 신뢰성 및 제어 가능성 향상을 위한
@@ -434,6 +402,37 @@
                 <div>
                   <h3>제1회 건국대학교 해커톤 우수상</h3>
                   <p>과학기술정보통신부, 정보통신기획평가원, 건국대학교</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <!-- 학력 -->
+        <section
+          id="experience"
+          class="content-section"
+          aria-labelledby="experience-title"
+        >
+          <div class="section-heading"><h2 id="experience-title">학력</h2></div>
+          <div class="section-body">
+            <ol class="timeline" role="list">
+              <li>
+                <div class="timeline-meta">
+                  <span>2025.03 ~ 현재</span><span>학력</span>
+                </div>
+                <div>
+                  <h3>컴퓨터공학 석사과정</h3>
+                  <p>건국대학교, 서울</p>
+                  <p class="muted">지도교수: 오병국</p>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-meta">
+                  <span>2019.03 ~ 2025.02</span><span>학력</span>
+                </div>
+                <div>
+                  <h3>컴퓨터공학 학사</h3>
+                  <p>건국대학교, 서울</p>
                 </div>
               </li>
             </ol>

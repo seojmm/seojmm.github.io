@@ -57,7 +57,8 @@ a {
 a:hover {
   color: var(--accent-hover);
 }
-a:focus-visible {
+a:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
   border-radius: 2px;
@@ -125,27 +126,28 @@ main:focus {
   transform: translateY(0);
 }
 .page-shell {
-  max-width: 936px;
-  margin: 36px auto;
-  padding-inline: 24px;
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 3fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 4vw, 3.5rem);
 }
 .cv-sheet {
-  padding: 38px 46px 0;
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
   background: var(--surface);
-  border-top: 8px solid var(--accent);
-  border-bottom: 5px solid var(--accent);
-  box-shadow: 0 2px 14px #36323108;
+  border-top: 3px solid var(--accent);
 }
 .profile-header {
-  padding-bottom: 7px;
-}
-.profile-topline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  position: sticky;
+  top: 2rem;
+  text-align: center;
 }
 .language-switch {
+  justify-content: center;
+  margin-top: 0.875rem;
   display: flex;
   gap: 11px;
   align-items: center;
@@ -165,27 +167,20 @@ main:focus {
 .language-switch > span {
   color: var(--line);
 }
-.profile-details {
-  margin-top: 19px;
-}
-.profile-details.has-photo {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 140px;
-  align-items: start;
-  gap: 32px;
-}
 .profile-photo {
-  width: 140px;
-  height: auto;
-  display: block;
-}
-.profile-description {
-  color: var(--muted);
+  width: 9.5rem;
+  height: 9.5rem;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 30%;
 }
 .affiliation {
-  margin-bottom: 5px;
+  margin: 0.5rem auto 0.875rem;
+  color: var(--muted);
 }
 .resource-links {
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 3px 19px;
@@ -198,18 +193,6 @@ main:focus {
 }
 .resource-links a:hover {
   text-decoration: underline;
-}
-.resource-links a span {
-  margin-left: 3px;
-  font-size: 0.8125rem;
-}
-.profile-details .resource-links {
-  margin-top: 10px;
-}
-.introduction {
-  border-top: 1px solid var(--line);
-  margin-top: 25px;
-  padding-top: 23px;
 }
 .prose p + p {
   margin-top: 11px;
@@ -236,12 +219,18 @@ main:focus {
 .section-body {
   min-width: 0;
 }
-.interest-list {
-  list-style: disc;
-  padding-left: 22px;
+.research-topic + .research-topic {
+  border-top: 1px solid var(--line);
 }
-.interest-list li + li {
-  margin-top: 4px;
+.research-topic summary {
+  padding: 0.55rem 0.2rem;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+.research-topic ul {
+  padding: 0 0.5rem 0.7rem 1.65rem;
+  list-style: disc;
 }
 .project-entry + .project-entry {
   border-top: 1px solid var(--line);
@@ -299,22 +288,15 @@ main:focus {
   font-size: 0.9375rem;
   font-weight: 600;
 }
-.publication-year > .year {
-  margin-bottom: 10px;
-}
-.publication-list {
-  list-style: decimal;
-  padding-left: 23px;
-}
-.publication-list > li {
-  padding-left: 3px;
-}
-.publication-list > li::marker {
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
+.publication-year {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
 }
 .publication-list li + li {
-  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+  margin-top: 1rem;
 }
 .publication-list h4 {
   overflow-wrap: anywhere;
@@ -403,29 +385,33 @@ main:focus {
 .site-footer a span {
   margin-left: 6px;
 }
-@media (max-width: 640px) {
+@media (max-width: 800px), (max-height: 520px) {
+  .profile-header {
+    position: static;
+  }
+}
+@media (max-width: 800px) {
   .page-shell {
-    padding-inline: 12px;
-    margin-block: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.75rem 1rem;
   }
+  .profile-photo {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 0.8rem;
+  }
+}
+@media (max-width: 640px) {
   .cv-sheet {
-    padding: 27px 23px 0;
-    border-top-width: 6px;
-  }
-  .profile-topline {
-    flex-wrap: wrap;
-    gap: 8px 18px;
+    padding: 1.25rem;
   }
   h1 {
     font-size: 1.75rem;
   }
-  .profile-details.has-photo {
-    grid-template-columns: minmax(0, 1fr) 96px;
-    gap: 16px;
-  }
-  .profile-photo {
-    width: 96px;
-    height: auto;
+  .publication-year {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
   }
   .content-section {
     margin-top: 27px;
@@ -476,7 +462,11 @@ main:focus {
   .site-footer a {
     display: none;
   }
+  .profile-header {
+    position: static;
+  }
   .page-shell {
+    display: block;
     max-width: none;
     margin: 0;
     padding: 0;

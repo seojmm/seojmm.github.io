@@ -33,79 +33,64 @@
     />
     <meta property="og:url" content="https://seojmm.github.io/en/" />
     <meta property="og:locale" content="en_US" />
-    <link rel="stylesheet" href="../style.css?v=profile-photo-20260918" />
+    <link rel="stylesheet" href="../style.css?v=research-layout-20261119" />
     <script src="../script.js?v=plain-20260918" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="page-shell">
+      <header id="about" class="profile-header" aria-labelledby="profile-title">
+        <img
+          class="profile-photo"
+          src="../assets/jimyeung-seo.jpg"
+          alt="Portrait of Jimyeung Seo"
+          width="632"
+          height="800"
+          decoding="async"
+        />
+        <h1 id="profile-title">Jimyeung Seo</h1>
+        <p class="affiliation">
+          M.S. Student in Computer Science and Engineering, Konkuk
+          University
+        </p>
+        <ul class="resource-links" role="list">
+          <li>
+            <a href="https://github.com/seojmm"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jimyeungseo"
+              >LinkedIn</a
+            >
+          </li>
+        </ul>
+        <nav class="language-switch" aria-label="Language">
+          <a href="../index.html" lang="ko" hreflang="ko">KO</a
+          ><span aria-hidden="true">/</span
+          ><a
+            href="../en/index.html"
+            lang="en"
+            hreflang="en"
+            aria-current="page"
+            >EN</a
+          >
+        </nav>
+      </header>
       <main id="main" class="cv-sheet" tabindex="-1">
-        <!-- 프로필 및 소개 -->
-        <header
-          id="about"
-          class="profile-header"
-          aria-labelledby="profile-title"
-        >
-          <div class="profile-topline">
-            <h1 id="profile-title">Jimyeung Seo</h1>
-            <nav class="language-switch" aria-label="Language">
-              <a href="../index.html" lang="ko" hreflang="ko">KO</a
-              ><span aria-hidden="true">/</span
-              ><a
-                href="../en/index.html"
-                lang="en"
-                hreflang="en"
-                aria-current="page"
-                >EN</a
-              >
-            </nav>
-          </div>
-          <div class="profile-details has-photo">
-            <div>
-              <p class="affiliation">
-                M.S. Student in Computer Science and Engineering, Konkuk
-                University
-              </p>
-              <p class="profile-description">
-                Graph Neural Networks, Knowledge Distillation, Recommender
-                Systems
-              </p>
-              <ul class="resource-links" role="list">
-                <li>
-                  <a href="https://github.com/seojmm"
-                    >GitHub<span aria-hidden="true"> ↗</span></a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/in/jimyeungseo"
-                    >LinkedIn<span aria-hidden="true"> ↗</span></a
-                  >
-                </li>
-              </ul>
-            </div>
-            <img
-              class="profile-photo"
-              src="../assets/jimyeung-seo.jpg"
-              alt="Portrait of Jimyeung Seo"
-              width="632"
-              height="800"
-              decoding="async"
-            />
-          </div>
-          <div class="prose introduction">
-            <p>
-              I am a master’s student in Computer Science and Engineering at
-              Konkuk University, supervised by Professor Byungkook Oh.
-            </p>
-            <p>
-              I work on recommender systems and question answering over knowledge
-              graphs. I am interested in using graph representations of data and
-              user context to help models find relevant information. I also study
-              knowledge distillation methods that transfer
-              knowledge from images to text-based models.
-            </p>
-          </div>
-        </header>
+        <div class="prose introduction">
+          <p>
+            I am a master’s student in Computer Science and Engineering at
+            Konkuk University, supervised by Professor Byungkook Oh.
+          </p>
+          <p>
+            I work on recommender systems and question answering over knowledge
+            graphs. I am interested in using graph representations of data and
+            user context to help models find relevant information. I also study
+            knowledge distillation methods that transfer
+            knowledge from images to text-based models.
+          </p>
+        </div>
         <!-- 연구 관심사 -->
         <section
           id="research"
@@ -116,47 +101,27 @@
             <h2 id="research-title">Research interests</h2>
           </div>
           <div class="section-body">
-            <ul class="interest-list">
-              <li>Graph Neural Networks</li>
-              <li>Knowledge Distillation</li>
-              <li>Recommender Systems</li>
-            </ul>
-          </div>
-        </section>
-        <!-- 학력 -->
-        <section
-          id="experience"
-          class="content-section"
-          aria-labelledby="experience-title"
-        >
-          <div class="section-heading">
-            <h2 id="experience-title">Education</h2>
-          </div>
-          <div class="section-body">
-            <ol class="timeline" role="list">
-              <li>
-                <div class="timeline-meta">
-                  <span>Mar 2025 to Present</span><span>Education</span>
-                </div>
-                <div>
-                  <h3>
-                    M.S. in Computer Science and Engineering (in progress)
-                  </h3>
-                  <p>Konkuk University, Seoul, South Korea</p>
-                  <p class="muted">Supervisor: Byungkook Oh</p>
-                </div>
-              </li>
-              <li>
-                <div class="timeline-meta">
-                  <span>Mar 2019 to Feb 2025</span><span>Education</span>
-                </div>
-                <div>
-                  <h3>B.S. in Computer Science and Engineering</h3>
-                  <p>Konkuk University, Seoul, South Korea</p>
-                  <p class="muted">GPA: 3.96 / 4.5, Major GPA: 4.0 / 4.5</p>
-                </div>
-              </li>
-            </ol>
+            <details class="research-topic">
+              <summary>Graph Neural Networks</summary>
+              <ul>
+                <li><a href="#paper-graph-retrieval">Multi-intent graph retrieval</a></li>
+                <li><a href="#project-graph-analysis">Misinformation detection on propagation graphs</a></li>
+              </ul>
+            </details>
+            <details class="research-topic">
+              <summary>Knowledge Distillation</summary>
+              <ul>
+                <li><a href="#paper-distillation">Image-guided distillation for news recommendation</a></li>
+                <li><a href="#project-multimodal">Multimodal generative models</a></li>
+              </ul>
+            </details>
+            <details class="research-topic">
+              <summary>Recommender Systems</summary>
+              <ul>
+                <li><a href="#paper-recommendation">Semantic graph refinement for recommendation</a></li>
+                <li><a href="#project-recommendation">Recommender design consulting</a></li>
+              </ul>
+            </details>
           </div>
         </section>
         <!-- 논문: 연도별 목록 -->
@@ -189,7 +154,7 @@
                   </article>
                 </li>
                 <li>
-                  <article>
+                  <article id="paper-graph-retrieval">
                     <h4>
                       Diversifying Differentiable Graph Retrieval with
                       Topic-Adaptive Multi-Intent Learning
@@ -202,7 +167,7 @@
                   </article>
                 </li>
                 <li>
-                  <article>
+                  <article id="paper-distillation">
                     <h4>
                       Image-Guided Debiasing Distillation with Preference
                       Alignment Across Multi-News Histories
@@ -223,7 +188,7 @@
               <h3 class="year">2025</h3>
               <ol class="publication-list" role="list">
                 <li>
-                  <article>
+                  <article id="paper-recommendation">
                     <h4>
                       Interaction-Grounded Semantic Graph Refinement for
                       LLM-based Recommendation
@@ -295,7 +260,7 @@
           </div>
           <div class="section-body">
             <div class="project-list">
-              <article class="project-entry">
+              <article class="project-entry" id="project-manufacturing">
                 <div class="entry-heading">
                   <h3>
                     Development of Multi-Turn Question Answering Technology
@@ -329,7 +294,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-graph-analysis">
                 <div class="entry-heading">
                   <h3>Graph-Based Threat Tracking Analysis</h3>
                   <span class="entry-period">Oct 2025 to Present</span>
@@ -353,7 +318,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-recommendation">
                 <div class="entry-heading">
                   <h3>
                     Recommendation System Model Design Consulting and Case Study
@@ -386,7 +351,7 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry">
+              <article class="project-entry" id="project-multimodal">
                 <div class="entry-heading">
                   <h3>
                     Graph-Structured Interaction for Improving Reliability and
@@ -464,6 +429,41 @@
                 <div>
                   <h3>1st Konkuk University Hackathon: Excellence Award</h3>
                   <p>Ministry of Science and ICT, Institute of Information &amp; Communications Technology Planning &amp; Evaluation, Konkuk University</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <!-- 학력 -->
+        <section
+          id="experience"
+          class="content-section"
+          aria-labelledby="experience-title"
+        >
+          <div class="section-heading">
+            <h2 id="experience-title">Education</h2>
+          </div>
+          <div class="section-body">
+            <ol class="timeline" role="list">
+              <li>
+                <div class="timeline-meta">
+                  <span>Mar 2025 to Present</span><span>Education</span>
+                </div>
+                <div>
+                  <h3>
+                    M.S. in Computer Science and Engineering (in progress)
+                  </h3>
+                  <p>Konkuk University, Seoul, South Korea</p>
+                  <p class="muted">Supervisor: Byungkook Oh</p>
+                </div>
+              </li>
+              <li>
+                <div class="timeline-meta">
+                  <span>Mar 2019 to Feb 2025</span><span>Education</span>
+                </div>
+                <div>
+                  <h3>B.S. in Computer Science and Engineering</h3>
+                  <p>Konkuk University, Seoul, South Korea</p>
                 </div>
               </li>
             </ol>
