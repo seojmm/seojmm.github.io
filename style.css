@@ -127,7 +127,7 @@ main:focus {
 }
 .page-shell {
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) minmax(0, 3fr);
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 4fr);
   align-items: start;
   gap: clamp(2rem, 5vw, 5rem);
   max-width: 1180px;
