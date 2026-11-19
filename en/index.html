@@ -33,8 +33,8 @@
     />
     <meta property="og:url" content="https://seojmm.github.io/en/" />
     <meta property="og:locale" content="en_US" />
-    <link rel="stylesheet" href="../style.css?v=research-layout-20261119" />
-    <script src="../script.js?v=plain-20260918" defer></script>
+    <link rel="stylesheet" href="../style.css?v=contact-cv-20261119" />
+    <script src="../script.js?v=contact-cv-20261119" defer></script>
   </head>
   <body id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -53,18 +53,29 @@
           M.S. Student in Computer Science and Engineering, Konkuk
           University
         </p>
-        <ul class="resource-links" role="list">
+        <ul class="contact-links" role="list">
           <li>
-            <a href="https://github.com/seojmm"
-              >GitHub</a
-            >
+            <button type="button" data-email="myungs8562@gmail.com" title="Copy email address (myungs8562@gmail.com)" aria-label="Copy email address (myungs8562@gmail.com)">
+              <img src="../assets/email.svg" width="24" height="24" alt="" />
+            </button>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jimyeungseo"
-              >LinkedIn</a
-            >
+            <a href="https://github.com/seojmm" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub (opens in a new tab)">
+              <img src="../assets/github.svg" width="24" height="24" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jimyeungseo" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn (opens in a new tab)">
+              <img src="../assets/linkedin.svg" width="24" height="24" alt="" />
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/document/d/1pgF9TS0C3MUeFgiOzFlByU6u7Cye_vHp/edit?usp=sharing&amp;ouid=102526004897906349736&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" title="CV" aria-label="CV (opens in a new tab)">
+              <img src="../assets/cv.svg" width="24" height="24" alt="" />
+            </a>
           </li>
         </ul>
+        <p class="copy-status" role="status"></p>
         <nav class="language-switch" aria-label="Language">
           <a href="../index.html" lang="ko" hreflang="ko">KO</a
           ><span aria-hidden="true">/</span
@@ -79,10 +90,6 @@
       </header>
       <main id="main" class="cv-sheet" tabindex="-1">
         <div class="prose introduction">
-          <p>
-            I am a master’s student in Computer Science and Engineering at
-            Konkuk University, supervised by Professor Byungkook Oh.
-          </p>
           <p>
             I work on recommender systems and question answering over knowledge
             graphs. I am interested in using graph representations of data and
@@ -101,27 +108,27 @@
             <h2 id="research-title">Research interests</h2>
           </div>
           <div class="section-body">
-            <details class="research-topic">
-              <summary>Graph Neural Networks</summary>
+            <div class="research-topic">
+              <h3>Graph Neural Networks</h3>
               <ul>
                 <li><a href="#paper-graph-retrieval">Multi-intent graph retrieval</a></li>
                 <li><a href="#project-graph-analysis">Misinformation detection on propagation graphs</a></li>
               </ul>
-            </details>
-            <details class="research-topic">
-              <summary>Knowledge Distillation</summary>
+            </div>
+            <div class="research-topic">
+              <h3>Knowledge Distillation</h3>
               <ul>
                 <li><a href="#paper-distillation">Image-guided distillation for news recommendation</a></li>
                 <li><a href="#project-multimodal">Multimodal generative models</a></li>
               </ul>
-            </details>
-            <details class="research-topic">
-              <summary>Recommender Systems</summary>
+            </div>
+            <div class="research-topic">
+              <h3>Recommender Systems</h3>
               <ul>
                 <li><a href="#paper-recommendation">Semantic graph refinement for recommendation</a></li>
                 <li><a href="#project-recommendation">Recommender design consulting</a></li>
               </ul>
-            </details>
+            </div>
           </div>
         </section>
         <!-- 논문: 연도별 목록 -->
@@ -134,6 +141,21 @@
             <h2 id="publications-title">Publications</h2>
           </div>
           <div class="section-body">
+            <div class="publication-year">
+              <h3 class="year">2027</h3>
+              <ol class="publication-list" role="list">
+                <li>
+                  <article>
+                    <h4>Continuation-Conditioned Relational Routing for Early Fake News Detection</h4>
+                    <p class="authors">
+                      <strong>Jimyeung Seo</strong>, Dayeon Hong, Dongcheon Lee,
+                      Bonyou Koo, Donghyun Kim, Byungkook Oh
+                    </p>
+                    <p class="venue">ACM International Conference on Web Search and Data Mining (WSDM ’27)</p>
+                  </article>
+                </li>
+              </ol>
+            </div>
             <div class="publication-year">
               <h3 class="year">2026</h3>
               <ol class="publication-list" role="list">
@@ -406,7 +428,7 @@
               <li>
                 <span class="year">2025.12.17</span>
                 <div>
-                  <h3>Kakao X KIISE AI Agent Contest: Excellence Award</h3>
+                  <h3>Kakao X KIISE AI Agent Contest: Excellence Award (3rd Place)</h3>
                   <p>Kakao, Korean Institute of Information Scientists and Engineers</p>
                 </div>
               </li>
@@ -418,7 +440,7 @@
                 </div>
               </li>
               <li>
-                <span class="year">2025</span>
+                <span class="year">2024</span>
                 <div>
                   <h3>Dean’s List</h3>
                   <p>Konkuk University</p>
@@ -427,7 +449,7 @@
               <li>
                 <span class="year">2023.08.17</span>
                 <div>
-                  <h3>1st Konkuk University Hackathon: Excellence Award</h3>
+                  <h3>1st Konkuk University Hackathon: Excellence Award (3rd Place)</h3>
                   <p>Ministry of Science and ICT, Institute of Information &amp; Communications Technology Planning &amp; Evaluation, Konkuk University</p>
                 </div>
               </li>
