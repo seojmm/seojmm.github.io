@@ -2,16 +2,16 @@
 
 HTML, CSS, JavaScript만으로 만든 개인 CV 웹사이트입니다. Node.js, npm 설치나 빌드 없이 사용할 수 있습니다.
 
-- 한국어(기본): https://seojmm.github.io/
-- English: https://seojmm.github.io/en/
-- 한국어 기본, `KO / EN` 순서, Pretendard, 저채도 빨간색을 사용합니다. 데스크톱은 왼쪽 프로필과 오른쪽 본문의 두 열로, 모바일은 한 열로 표시합니다.
+- English (기본): https://seojmm.github.io/
+- 한국어: https://seojmm.github.io/ko/
+- 영어 기본, `KO / EN` 순서, Pretendard, 저채도 빨간색을 사용합니다. 데스크톱은 왼쪽 프로필과 오른쪽 본문의 두 열로, 모바일은 한 열로 표시합니다.
 
 ## 파일 구성
 
 ```text
-index.html               한국어 CV: 직접 수정하는 원본
-en/index.html           English CV: 직접 수정하는 원본
-ko/index.html           기존 /ko/ 주소를 한국어 페이지로 연결
+index.html              English CV: 직접 수정하는 원본
+en/index.html           기존 /en/ 주소를 영어 페이지로 연결
+ko/index.html           한국어 CV: 직접 수정하는 원본
 style.css                색상, 글꼴, 여백, 모바일 및 인쇄 스타일
 script.js                언어 전환 시 스크롤 위치 유지, 연도 갱신
 assets/favicon.svg       사이트 아이콘
@@ -21,7 +21,7 @@ assets/fonts/            Pretendard 웹폰트와 라이선스
 
 ## 내용 수정
 
-한국어는 `index.html`, 영어는 `en/index.html`에서 바로 수정합니다. 두 파일은 완전한 HTML 문서이므로 JavaScript가 꺼져 있어도 본문과 언어 링크가 작동합니다.
+한국어는 `ko/index.html`, 영어는 `index.html`에서 바로 수정합니다. 두 파일은 완전한 HTML 문서이므로 JavaScript가 꺼져 있어도 본문과 언어 링크가 작동합니다.
 
 HTML 안의 주석과 아래 `id`를 검색하면 각 영역을 찾을 수 있습니다.
 
@@ -38,7 +38,7 @@ HTML 안의 주석과 아래 `id`를 검색하면 각 영역을 찾을 수 있�
 
 항목을 추가하거나 날짜를 바꾸면 한국어, 영어 파일을 함께 수정하세요. 논문 제목과 저자명은 두 언어에서 동일하게 유지하며 본인 이름은 `<strong>Jimyeung Seo</strong>`로 강조합니다. 일반 문장에 `&`, `<`, `>`를 넣을 때는 각각 `&amp;`, `&lt;`, `&gt;`로 적으세요.
 
-프로필 사진은 `assets/jimyeung-seo.jpg`이며 프로필 상단에 둥글게 표시합니다. 사진을 교체할 때는 이 파일을 바꾸고, 이미지 크기가 달라지면 두 HTML의 `width`와 `height`도 원본 크기에 맞추세요. 영문 페이지의 파일 경로는 `../assets/`로 시작합니다. PDF를 추가할 때도 `assets/`에 넣고 링크 목록에 연결하면 됩니다.
+프로필 사진은 `assets/jimyeung-seo.jpg`이며 프로필 상단에 둥글게 표시합니다. 사진을 교체할 때는 이 파일을 바꾸고, 이미지 크기가 달라지면 두 HTML의 `width`와 `height`도 원본 크기에 맞추세요. 국문 페이지의 파일 경로는 `../assets/`로 시작합니다. 두 페이지의 CV 아이콘은 저장소 루트의 CV PDF를 엽니다.
 
 ## 로컬에서 보기
 
@@ -57,7 +57,7 @@ python3 -m http.server 4321 --bind 127.0.0.1
 저장소의 **Settings → Pages → Source: Deploy from a branch → main / (root)**를 사용합니다. 수정한 파일을 커밋하고 `main`에 push하면 GitHub Pages가 파일을 그대로 게시합니다. 별도의 Astro 빌드나 사용자 정의 배포 워크플로는 없습니다.
 
 ```bash
-git add index.html en/index.html style.css script.js assets
+git add index.html ko/index.html en/index.html style.css script.js assets cv_*.pdf
 git commit -m "Update CV"
 git push origin main
 ```
@@ -66,9 +66,9 @@ git push origin main
 
 ## 콘텐츠 출처와 폰트
 
-제공받은 CV를 기준으로 학력 2건, 논문 6편, 특허 출원 1건, 프로젝트 4건, 수상, 장학 5건과 기술, 언어를 반영했습니다. 본인 영문 이름은 요청에 따라 **Jimyeung Seo**로 통일했습니다. 학위 과정, 프로젝트의 ‘현재’ 표시는 CV 기준이므로 변화가 있으면 갱신하세요.
+제공받은 CV를 기준으로 학력 2건, 논문 6편, 특허 출원 1건, 프로젝트 3건, 수상, 장학 5건과 기술, 언어를 반영했습니다. 본인 영문 이름은 요청에 따라 **Jimyeung Seo**로 통일했습니다. 학위 과정, 프로젝트의 ‘현재’ 표시는 CV 기준이므로 변화가 있으면 갱신하세요.
 
-논문, 특허, 프로젝트 URL은 원문에 없어 추가하지 않았습니다. 국문 특허명, 프로젝트명은 CV 영문 제목의 번역입니다. 원본 CV 파일과 개인 전화번호는 배포에 포함하지 않습니다.
+논문, 특허, 프로젝트 URL은 원문에 없어 추가하지 않았습니다. 국문 특허명, 프로젝트명은 CV 영문 제목의 번역입니다. 공개용 CV PDF는 저장소 루트에 둡니다.
 
 [Pretendard Variable 1.3.9](https://github.com/orioncactus/pretendard/tree/v1.3.9)를 직접 제공합니다. 저작권 고지와 SIL Open Font License는 `assets/fonts/OFL-Pretendard.txt`에 있습니다.
 

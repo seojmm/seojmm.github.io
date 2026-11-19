@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3f1ee" />
     <meta
       name="description"
-      content="그래프 신경망, 지식 증류, 추천 시스템"
+      content="Graph Neural Networks, Temporal Knowledge Graphs, Knowledge Distillation"
     />
-    <title>서지명: 개인 포트폴리오</title>
+    <title>Jimyeung Seo: Personal portfolio</title>
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link
       rel="preload"
@@ -18,84 +18,91 @@
       crossorigin
     />
     <link rel="canonical" href="https://seojmm.github.io/" />
-    <link rel="alternate" hreflang="ko" href="https://seojmm.github.io/" />
-    <link rel="alternate" hreflang="en" href="https://seojmm.github.io/en/" />
+    <link rel="alternate" hreflang="ko" href="https://seojmm.github.io/ko/" />
+    <link rel="alternate" hreflang="en" href="https://seojmm.github.io/" />
     <link
       rel="alternate"
       hreflang="x-default"
       href="https://seojmm.github.io/"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="서지명: 개인 포트폴리오" />
+    <meta property="og:title" content="Jimyeung Seo: Personal portfolio" />
     <meta
       property="og:description"
-      content="그래프 신경망, 지식 증류, 추천 시스템"
+      content="Graph Neural Networks, Temporal Knowledge Graphs, Knowledge Distillation"
     />
     <meta property="og:url" content="https://seojmm.github.io/" />
-    <meta property="og:locale" content="ko_KR" />
-    <link rel="stylesheet" href="./style.css?v=section-tabs-1" />
-    <script src="./script.js?v=contact-cv-20261119" defer></script>
+    <meta property="og:locale" content="en_US" />
+    <link rel="stylesheet" href="./style.css?v=site-header-1" />
+    <script src="./script.js?v=site-header-1" defer></script>
   </head>
   <body id="top">
-    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="site-name" href="#top">Jimyeung Seo</a>
+        <button class="menu-toggle" type="button" aria-controls="section-links" aria-expanded="false" hidden>
+          <span class="menu-icon" aria-hidden="true"></span>Menu
+        </button>
+        <nav class="section-nav" id="section-links" aria-label="Page sections">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#patents">Patents</a>
+          <a href="#projects">Projects</a>
+          <a href="#awards">Awards</a>
+          <a href="#experience">Education</a>
+          <a href="#skills">Skills</a>
+        </nav>
+      </div>
+    </header>
     <div class="page-shell">
       <header id="about" class="profile-header" aria-labelledby="profile-title">
         <img
           class="profile-photo"
           src="./assets/jimyeung-seo.jpg"
-          alt="서지명 프로필 사진"
+          alt="Portrait of Jimyeung Seo"
           width="632"
           height="800"
           decoding="async"
         />
-        <h1 id="profile-title">서지명</h1>
-        <p class="affiliation">건국대학교 컴퓨터공학 석사과정</p>
+        <h1 id="profile-title">Jimyeung Seo</h1>
+        <p class="affiliation">
+          M.S. Student in Computer Science and Engineering, Konkuk
+          University
+        </p>
         <ul class="contact-links" role="list">
           <li>
-            <button type="button" data-email="myungs8562@gmail.com" title="이메일 주소 복사 (myungs8562@gmail.com)" aria-label="이메일 주소 복사 (myungs8562@gmail.com)">
+            <button type="button" data-email="myungs8562@gmail.com" title="Copy email address (myungs8562@gmail.com)" aria-label="Copy email address (myungs8562@gmail.com)">
               <img src="./assets/email.svg" width="24" height="24" alt="" />
             </button>
           </li>
           <li>
-            <a href="https://github.com/seojmm" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub (새 창)">
+            <a href="https://github.com/seojmm" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub (opens in a new tab)">
               <img src="./assets/github.svg" width="24" height="24" alt="" />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/jimyeungseo" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn (새 창)">
+            <a href="https://www.linkedin.com/in/jimyeungseo" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn (opens in a new tab)">
               <img src="./assets/linkedin.svg" width="24" height="24" alt="" />
             </a>
           </li>
           <li>
-            <a href="https://docs.google.com/document/d/1pgF9TS0C3MUeFgiOzFlByU6u7Cye_vHp/edit?usp=sharing&amp;ouid=102526004897906349736&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener noreferrer" title="CV" aria-label="CV (새 창)">
+            <a href="./cv_%E1%84%89%E1%85%A5%E1%84%8C%E1%85%B5%E1%84%86%E1%85%A7%E1%86%BC.pdf" target="_blank" rel="noopener noreferrer" title="CV" aria-label="CV (opens in a new tab)">
               <img src="./assets/cv.svg" width="24" height="24" alt="" />
             </a>
           </li>
         </ul>
         <p class="copy-status" role="status"></p>
-        <nav class="language-switch" aria-label="언어">
-          <a href="./index.html" lang="ko" hreflang="ko" aria-current="page"
-            >KO</a
-          ><span aria-hidden="true">/</span
-          ><a href="./en/index.html" lang="en" hreflang="en">EN</a>
+        <nav class="language-switch" aria-label="Language">
+          <a href="./ko/index.html" lang="ko" hreflang="ko">KO</a>
+          <span aria-hidden="true">/</span>
+          <a href="./index.html" lang="en" hreflang="en" aria-current="page">EN</a>
         </nav>
       </header>
       <main id="main" class="cv-sheet" tabindex="-1">
-        <nav class="section-nav" aria-label="본문 섹션">
-          <a href="#research">연구 관심사</a>
-          <a href="#publications">논문</a>
-          <a href="#patents">특허</a>
-          <a href="#projects">프로젝트</a>
-          <a href="#awards">수상 및 장학금</a>
-          <a href="#experience">학력</a>
-          <a href="#skills">기술 및 언어</a>
-        </nav>
         <div class="prose introduction">
           <p>
-            추천 시스템과 지식 그래프 기반 질의응답을 연구합니다. 데이터의 관계를
-            그래프로 표현하고 사용자의 맥락을 반영해 필요한 정보를 더 잘 찾는
-            방법에 관심이 있습니다. 이미지에서 얻은 지식을 텍스트 기반 모델에
-            전달하는 지식 증류 방법도 연구하고 있습니다.
+            I study graph neural networks and temporal knowledge graphs, with an interest in how relationships between entities change over time. In my work on news recommendation, I use knowledge distillation to transfer information from images to text-based models.
           </p>
         </div>
         <!-- 연구 관심사 -->
@@ -105,12 +112,12 @@
           aria-labelledby="research-title"
         >
           <div class="section-heading">
-            <h2 id="research-title">연구 관심사</h2>
+            <h2 id="research-title">Research interests</h2>
           </div>
           <ul class="research-interests">
-            <li>그래프 신경망 (Graph Neural Networks)</li>
-            <li>지식 증류 (Knowledge Distillation)</li>
-            <li>추천 시스템 (Recommender Systems)</li>
+            <li>Graph Neural Networks</li>
+            <li>Temporal Knowledge Graphs</li>
+            <li>Knowledge Distillation</li>
           </ul>
         </section>
         <!-- 논문: 연도별 목록 -->
@@ -120,7 +127,7 @@
           aria-labelledby="publications-title"
         >
           <div class="section-heading">
-            <h2 id="publications-title">논문</h2>
+            <h2 id="publications-title">Publications</h2>
           </div>
           <div class="section-body">
             <div class="publication-year">
@@ -231,21 +238,22 @@
           aria-labelledby="patents-title"
         >
           <div class="section-heading">
-            <h2 id="patents-title">특허 출원</h2>
+            <h2 id="patents-title">Patent applications</h2>
           </div>
           <div class="section-body">
             <ol class="patent-list" role="list">
               <li>
                 <article>
                   <h3>
-                    멀티모달 데이터 증류 방법 및 트리플 기반 뉴스 정제 및 추천 방법
+                    Multimodal Data Distillation Method, and Triple-based News
+                    Refinement and Recommendation Method
                   </h3>
                   <p class="authors">
                     <strong>Jimyeung Seo</strong>, Byungkook Oh
                   </p>
                   <p class="patent-meta">
-                    KR 10-2025-016170, 출원일:
-                    <time datetime="2025-10-31">2025-10-31</time>
+                    KR 10-2025-016170, Filed:
+                    <time datetime="2025-10-31">2025.10.31</time>
                   </p>
                 </article>
               </li>
@@ -259,30 +267,35 @@
           aria-labelledby="projects-title"
         >
           <div class="section-heading">
-            <h2 id="projects-title">프로젝트</h2>
+            <h2 id="projects-title">Projects</h2>
           </div>
           <div class="section-body">
             <div class="project-list">
               <article class="project-entry" id="project-manufacturing">
                 <div class="entry-heading">
                   <h3>
-                    제조 도메인 지식 그래프 기반 멀티턴 질의응답 기술 개발
+                    Development of Multi-Turn Question Answering Technology
+                    Based on a Manufacturing-Domain Knowledge Graph
                   </h3>
-                  <span class="entry-period">2026.05 ~ 현재</span>
+                  <span class="entry-period">2026.05 ~ Present</span>
                 </div>
-                <p>LG전자 생산기술원 지원 과제.</p>
-                <p class="project-role"><strong>참여연구원 (그래프 검색 및 시연 시스템 개발)</strong></p>
+                <p>
+                  Supported by LG Electronics Production Engineering Research
+                  Institute.
+                </p>
+                <p class="project-role"><strong>Project Member (Graph Retrieval &amp; Demo Development)</strong></p>
                 <ul class="project-contributions">
                   <li>
-                    제조 분야의 자연어 질문을 SQL로 변환할 때 필요한 테이블, 컬럼,
-                    계산식, 업무 규칙을 검색하는 기능을 Python과 Neo4j로 개발했습니다.
-                    테이블을 중심으로 검색 맥락을 구성하고 필수 업무 규칙이 빠지지
-                    않도록 개선했습니다.
+                    Built a graph retrieval system with Python and Neo4j to find
+                    the tables, columns, formulas, and business rules needed to
+                    convert manufacturing questions into SQL. Organized the context
+                    around tables and improved retrieval to keep required business
+                    rules from being left out.
                   </li>
                   <li>
-                    vLLM 기반 언어모델 서빙 환경을 구성하고 Streamlit으로 시연 화면을
-                    만들었습니다. 그래프 검색과 모델 추론을 연결해 대화형 질의응답
-                    테스트와 과제 시연을 지원했습니다.
+                    Set up model serving with vLLM and built a demo interface in
+                    Streamlit. Connected graph retrieval to model inference for
+                    interactive question-answering tests and project demonstrations.
                   </li>
                 </ul>
                 <div class="project-bottom">
@@ -292,48 +305,31 @@
                   </ul>
                 </div>
               </article>
-              <article class="project-entry" id="project-graph-analysis">
-                <div class="entry-heading">
-                  <h3>그래프 기반 위협 추적 분석</h3>
-                  <span class="entry-period">2025.10 ~ 현재</span>
-                </div>
-                <p>LIG넥스원 지원 과제.</p>
-                <p class="project-role"><strong>참여연구원</strong></p>
-                <ul class="project-contributions">
-                  <li>
-                    부분적으로 관측된 전파 그래프를 이용해 허위정보를 조기에 탐지하는
-                    모델을 개발했습니다.
-                  </li>
-                  <li>
-                    향후 전파 양상을 예측해 관측된 반응 간 정보 전달 경로를 조정하는
-                    그래프 학습 방법을 설계했습니다.
-                  </li>
-                </ul>
-                <div class="project-bottom">
-                  <ul class="tags" role="list">
-                    <li>Graph Analysis</li>
-                  </ul>
-                </div>
-              </article>
               <article class="project-entry" id="project-recommendation">
                 <div class="entry-heading">
-                  <h3>추천 시스템 모델 설계 컨설팅 및 사례 연구</h3>
-                  <span class="entry-period">2025.09 ~ 현재</span>
+                  <h3>
+                    Recommendation System Model Design Consulting and Case Study
+                  </h3>
+                  <span class="entry-period">2025.09 ~ Present</span>
                 </div>
-                <p>한화시스템이 주관하는 국방과학연구소(ADD) 사업 참여 과제.</p>
-                <p class="project-role"><strong>실무책임자 (추천 시스템 설계 자문)</strong></p>
+                <p>
+                  Part of an Agency for Defense Development (ADD) program led by
+                  Hanwha Systems.
+                </p>
+                <p class="project-role"><strong>Project Leader (Recommender Design Consulting)</strong></p>
                 <ul class="project-contributions">
                   <li>
-                    지휘통제 데이터의 개체와 관계, 시간에 따른 상태 변화를 분석하고
-                    추천 시스템 설계 자문을 주도했습니다. 사용자 프로필을 바탕으로
-                    접근 가능한 정보 범위 안에서 후보를 검색하고 역할과 관심사에 따라
-                    우선순위를 정하는 방안을 제안했습니다.
+                    Led recommender system design consulting and analyzed entities,
+                    relationships, and state changes in command-and-control data.
+                    Proposed using user profiles to retrieve candidates within each
+                    user’s access permissions, then ranking them by role and interests.
                   </li>
                   <li>
-                    개인화 추천 사례를 검토하고 사용자 표현, 질의 분석, 검색, 순위화의
-                    단계별 평가 기준을 설계했습니다. 후보 검색의 포괄성과 추천 순위의
-                    품질을 평가하고 사용자 이력이나 그래프 정보가 부족한 상황도
-                    함께 살펴보도록 제안했습니다.
+                    Reviewed personalization case studies and designed evaluation
+                    criteria for user representation, query analysis, retrieval,
+                    and ranking. Proposed evaluating candidate coverage, ranking
+                    quality, and performance with limited user histories or
+                    incomplete graph information.
                   </li>
                 </ul>
                 <div class="project-bottom">
@@ -345,21 +341,25 @@
               <article class="project-entry" id="project-multimodal">
                 <div class="entry-heading">
                   <h3>
-                    멀티모달 생성 모델의 신뢰성 및 제어 가능성 향상을 위한
-                    그래프 구조 상호작용
+                    Graph-Structured Interaction for Improving Reliability and
+                    Controllability of Multimodal Generative Models
                   </h3>
-                  <span class="entry-period">2024.09 ~ 현재</span>
+                  <span class="entry-period">2024.09 ~ Present</span>
                 </div>
-                <p>과학기술정보통신부 재원으로 한국연구재단이 지원하는 과제.</p>
-                <p class="project-role"><strong>참여연구원</strong></p>
+                <p>
+                  Supported by the National Research Foundation of Korea, funded
+                  by the Ministry of Science and ICT.
+                </p>
+                <p class="project-role"><strong>Project Member</strong></p>
                 <ul class="project-contributions">
                   <li>
-                    이미지에서 얻은 지식을 텍스트 전용 모델에 증류하는 뉴스 추천
-                    방법을 개발했습니다.
+                    Developed a news recommendation method that distills knowledge
+                    from images into text-only models.
                   </li>
                   <li>
-                    트리플 단위 지도 미세조정 방법을 설계했습니다. 선호 정렬에는
-                    사실성과 뉴스 이력 간 일관성을 반영했습니다.
+                    Designed a triple-level supervised fine-tuning method. Used
+                    factuality and consistency across news histories for preference
+                    alignment.
                   </li>
                 </ul>
                 <div class="project-bottom">
@@ -379,43 +379,43 @@
           aria-labelledby="awards-title"
         >
           <div class="section-heading">
-            <h2 id="awards-title">수상 및 장학금</h2>
+            <h2 id="awards-title">Awards and Scholarships</h2>
           </div>
           <div class="section-body">
             <ol class="timeline" role="list">
               <li>
                 <span class="year">2026.06.05</span>
                 <div>
-                  <h3>2026년 AI서울테크연구지원사업(석사) 장학생 선정</h3>
+                  <h3>2026 AI서울테크연구지원사업 Scholarship Recipient (Master’s Program)</h3>
                   <p>서울미래인재재단</p>
                 </div>
               </li>
               <li>
                 <span class="year">2025.12.17</span>
                 <div>
-                  <h3>카카오X한국정보과학회 AI 에이전트 경진대회 우수상 (3위)</h3>
-                  <p>(주)카카오, 한국정보과학회</p>
+                  <h3>Kakao X KIISE AI Agent Contest: Excellence Award (3rd Place)</h3>
+                  <p>Kakao, Korean Institute of Information Scientists and Engineers</p>
                 </div>
               </li>
               <li>
                 <span class="year">2025.12.17</span>
                 <div>
-                  <h3>2025-2학기 대학원 KU우수연구장학생 선정</h3>
-                  <p>건국대학교</p>
+                  <h3>2025-2 Graduate KU우수연구장학 Scholarship Recipient</h3>
+                  <p>Konkuk University</p>
                 </div>
               </li>
               <li>
                 <span class="year">2024</span>
                 <div>
                   <h3>Dean’s List</h3>
-                  <p>건국대학교</p>
+                  <p>Konkuk University</p>
                 </div>
               </li>
               <li>
                 <span class="year">2023.08.17</span>
                 <div>
-                  <h3>제1회 건국대학교 해커톤 우수상 (3위)</h3>
-                  <p>과학기술정보통신부, 정보통신기획평가원, 건국대학교</p>
+                  <h3>1st Konkuk University Hackathon: Excellence Award (3rd Place)</h3>
+                  <p>Ministry of Science and ICT, Institute of Information &amp; Communications Technology Planning &amp; Evaluation, Konkuk University</p>
                 </div>
               </li>
             </ol>
@@ -427,26 +427,30 @@
           class="content-section"
           aria-labelledby="experience-title"
         >
-          <div class="section-heading"><h2 id="experience-title">학력</h2></div>
+          <div class="section-heading">
+            <h2 id="experience-title">Education</h2>
+          </div>
           <div class="section-body">
             <ol class="timeline" role="list">
               <li>
                 <div class="timeline-meta">
-                  <span>2025.03 ~ 현재</span><span>학력</span>
+                  <span>2025.03 ~ Present</span><span>Education</span>
                 </div>
                 <div>
-                  <h3>컴퓨터공학 석사과정</h3>
-                  <p>건국대학교, 서울</p>
-                  <p class="muted">지도교수: 오병국</p>
+                  <h3>
+                    M.S. in Computer Science and Engineering (in progress)
+                  </h3>
+                  <p>Konkuk University, Seoul, South Korea</p>
+                  <p class="muted">Supervisor: Byungkook Oh</p>
                 </div>
               </li>
               <li>
                 <div class="timeline-meta">
-                  <span>2019.03 ~ 2025.02</span><span>학력</span>
+                  <span>2019.03 ~ 2025.02</span><span>Education</span>
                 </div>
                 <div>
-                  <h3>컴퓨터공학 학사</h3>
-                  <p>건국대학교, 서울</p>
+                  <h3>B.S. in Computer Science and Engineering</h3>
+                  <p>Konkuk University, Seoul, South Korea</p>
                 </div>
               </li>
             </ol>
@@ -459,24 +463,24 @@
           aria-labelledby="skills-title"
         >
           <div class="section-heading">
-            <h2 id="skills-title">기술 및 언어</h2>
+            <h2 id="skills-title">Skills and languages</h2>
           </div>
           <div class="section-body">
             <dl class="skill-list">
               <div>
-                <dt>프로그래밍 및 도구</dt>
+                <dt>Programming and tools</dt>
                 <dd>C/C++, Python, PyTorch, Git, Docker</dd>
               </div>
               <div>
-                <dt>언어</dt>
-                <dd>한국어 (모국어), 영어 (OPIc IH)</dd>
+                <dt>Languages</dt>
+                <dd>Korean (Native), English (OPIc IH)</dd>
               </div>
             </dl>
           </div>
         </section>
         <footer class="site-footer">
-          <p>© <span data-current-year>2026</span> 서지명</p>
-          <a href="#top">맨 위로 <span aria-hidden="true">↑</span></a>
+          <p>© <span data-current-year>2026</span> Jimyeung Seo</p>
+          <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
         </footer>
       </main>
     </div>

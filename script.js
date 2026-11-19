@@ -39,3 +39,22 @@ emailButton.addEventListener("click", async () => {
     }, 2200);
   }
 });
+
+const menuToggle = document.querySelector(".menu-toggle");
+const siteHeader = document.querySelector(".site-header");
+menuToggle.hidden = false;
+menuToggle.addEventListener("click", () => {
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", String(!expanded));
+});
+document.addEventListener("click", (event) => {
+  if (!siteHeader.contains(event.target) || event.target.closest("a")) {
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+});
+siteHeader.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.focus();
+  }
+});
