@@ -33,7 +33,7 @@
     />
     <meta property="og:url" content="https://seojmm.github.io/en/" />
     <meta property="og:locale" content="en_US" />
-    <link rel="stylesheet" href="../style.css?v=profile-ratio-20261119" />
+    <link rel="stylesheet" href="../style.css?v=section-tabs-1" />
     <script src="../script.js?v=contact-cv-20261119" defer></script>
   </head>
   <body id="top">
@@ -89,6 +89,15 @@
         </nav>
       </header>
       <main id="main" class="cv-sheet" tabindex="-1">
+        <nav class="section-nav" aria-label="Page sections">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#patents">Patents</a>
+          <a href="#projects">Projects</a>
+          <a href="#awards">Awards</a>
+          <a href="#experience">Education</a>
+          <a href="#skills">Skills</a>
+        </nav>
         <div class="prose introduction">
           <p>
             I work on recommender systems and question answering over knowledge
@@ -107,29 +116,11 @@
           <div class="section-heading">
             <h2 id="research-title">Research interests</h2>
           </div>
-          <div class="section-body">
-            <div class="research-topic">
-              <h3>Graph Neural Networks</h3>
-              <ul>
-                <li><a href="#paper-graph-retrieval">Multi-intent graph retrieval</a></li>
-                <li><a href="#project-graph-analysis">Misinformation detection on propagation graphs</a></li>
-              </ul>
-            </div>
-            <div class="research-topic">
-              <h3>Knowledge Distillation</h3>
-              <ul>
-                <li><a href="#paper-distillation">Image-guided distillation for news recommendation</a></li>
-                <li><a href="#project-multimodal">Multimodal generative models</a></li>
-              </ul>
-            </div>
-            <div class="research-topic">
-              <h3>Recommender Systems</h3>
-              <ul>
-                <li><a href="#paper-recommendation">Semantic graph refinement for recommendation</a></li>
-                <li><a href="#project-recommendation">Recommender design consulting</a></li>
-              </ul>
-            </div>
-          </div>
+          <ul class="research-interests">
+            <li>Graph Neural Networks</li>
+            <li>Knowledge Distillation</li>
+            <li>Recommender Systems</li>
+          </ul>
         </section>
         <!-- 논문: 연도별 목록 -->
         <section

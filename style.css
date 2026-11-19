@@ -231,17 +231,30 @@ main:focus {
 .section-body {
   min-width: 0;
 }
-.research-topic + .research-topic {
-  border-top: 1px solid var(--line);
-}
-.research-topic h3 {
-  padding: 0.55rem 0.2rem;
-  color: var(--accent);
-  font-weight: 600;
-}
-.research-topic ul {
-  padding: 0 0.5rem 0.7rem 1.65rem;
+.research-interests {
   list-style: disc;
+  padding-inline-start: 1.4rem;
+}
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 1.5rem;
+}
+.section-nav a {
+  padding: 0.4rem 0.45rem;
+  border-bottom: 2px solid transparent;
+  color: var(--accent);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  border-bottom-color: currentColor;
 }
 .project-entry + .project-entry {
   border-top: 1px solid var(--line);
@@ -466,6 +479,7 @@ main:focus {
     font-size: 10.5pt;
   }
   .language-switch,
+  .section-nav,
   .skip-link,
   .site-footer a {
     display: none;

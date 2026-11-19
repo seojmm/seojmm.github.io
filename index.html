@@ -33,7 +33,7 @@
     />
     <meta property="og:url" content="https://seojmm.github.io/" />
     <meta property="og:locale" content="ko_KR" />
-    <link rel="stylesheet" href="./style.css?v=profile-ratio-20261119" />
+    <link rel="stylesheet" href="./style.css?v=section-tabs-1" />
     <script src="./script.js?v=contact-cv-20261119" defer></script>
   </head>
   <body id="top">
@@ -81,6 +81,15 @@
         </nav>
       </header>
       <main id="main" class="cv-sheet" tabindex="-1">
+        <nav class="section-nav" aria-label="본문 섹션">
+          <a href="#research">연구 관심사</a>
+          <a href="#publications">논문</a>
+          <a href="#patents">특허</a>
+          <a href="#projects">프로젝트</a>
+          <a href="#awards">수상 및 장학금</a>
+          <a href="#experience">학력</a>
+          <a href="#skills">기술 및 언어</a>
+        </nav>
         <div class="prose introduction">
           <p>
             추천 시스템과 지식 그래프 기반 질의응답을 연구합니다. 데이터의 관계를
@@ -98,29 +107,11 @@
           <div class="section-heading">
             <h2 id="research-title">연구 관심사</h2>
           </div>
-          <div class="section-body">
-            <div class="research-topic">
-              <h3>그래프 신경망 (Graph Neural Networks)</h3>
-              <ul>
-                <li><a href="#paper-graph-retrieval">다중 의도를 반영한 그래프 검색</a></li>
-                <li><a href="#project-graph-analysis">전파 그래프를 이용한 허위정보 탐지</a></li>
-              </ul>
-            </div>
-            <div class="research-topic">
-              <h3>지식 증류 (Knowledge Distillation)</h3>
-              <ul>
-                <li><a href="#paper-distillation">이미지 지식 증류를 통한 뉴스 추천</a></li>
-                <li><a href="#project-multimodal">멀티모달 생성 모델 연구</a></li>
-              </ul>
-            </div>
-            <div class="research-topic">
-              <h3>추천 시스템 (Recommender Systems)</h3>
-              <ul>
-                <li><a href="#paper-recommendation">추천을 위한 의미 그래프 정제</a></li>
-                <li><a href="#project-recommendation">추천 시스템 모델 설계 컨설팅</a></li>
-              </ul>
-            </div>
-          </div>
+          <ul class="research-interests">
+            <li>그래프 신경망 (Graph Neural Networks)</li>
+            <li>지식 증류 (Knowledge Distillation)</li>
+            <li>추천 시스템 (Recommender Systems)</li>
+          </ul>
         </section>
         <!-- 논문: 연도별 목록 -->
         <section

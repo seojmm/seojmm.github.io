@@ -28,7 +28,7 @@ HTML 안의 주석과 아래 `id`를 검색하면 각 영역을 찾을 수 있�
 | 영역 | 검색할 id | 항목 추가 방법 |
 | --- | --- | --- |
 | 프로필, 소개, 연락처 | `about` | 이름, 소속, 링크 수정. 소개 문단은 main 시작 부분에서 수정 |
-| 연구 관심사 | `research` | 분야별 `research-topic` 블록을 복사하고 관련 논문 및 프로젝트 앵커를 연결 |
+| 연구 관심사 | `research` | `research-interests` 목록에 분야명을 추가 |
 | 학력 | `experience` | `timeline` 안의 `<li>` 복사 |
 | 논문 | `publications` | 해당 연도의 `publication-list` 안의 `<li>` 복사 |
 | 특허 출원 | `patents` | `patent-list` 안의 `<li>` 복사 |
